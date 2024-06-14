@@ -1,0 +1,19 @@
+import { createApp } from 'vue'
+import './style.css'
+import App from './App.vue'
+
+// 导入路由器
+import router from './router'
+import {createPinia} from 'pinia'
+let pinia = createPinia()
+
+// 导入element-plus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+
+createApp(App)
+.use(ElementPlus,{locale:zhCn})
+.use(router)
+.use(pinia)
+.mount('#app')
